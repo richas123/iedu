@@ -1,0 +1,183 @@
+/*
+ * Start Bootstrap - Half Slider (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+
+/* You can change the height of the carousel by changing the height in the class below. It is set to 50% by default, but can be any height! */
+
+#landing-slider .col-md-10 {
+    padding: 0;
+}
+
+.carousel {
+    height: 210px;
+}
+
+.carousel-caption {
+    text-align: left;
+    left: 10%;
+}
+
+.description-head {
+    overflow: hidden;
+    padding: 5px 0 20px;
+    width: 60%;
+    margin-bottom: 5px;
+}
+
+.carousel-caption .enroll {
+    border: 0 none;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 12px 6%;
+    text-transform: uppercase;
+}
+
+.item,
+.active,
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media only screen and (min-width : 320px) and (max-device-width: 767px){
+    .title-head {
+        font-size: 25px;
+    }
+
+    .description-head {
+        height: 70px;
+    }
+
+    .carousel-caption .enroll{
+        padding: 10px 15px;
+        font-weight: normal;
+        font-size: 12px;
+    }
+}
+
+@bg-color: #583e7e;
+
+@text-color: #fff;
+
+@side-color-1: #1a1a1a;
+@side-color-2: darken(@side-color-3, 5%);
+@side-color-3: darken(@side-color-4, 5%);
+@side-color-4: @bg-color;
+@side-color-5: lighten(@side-color-4, 5%);
+@side-color-6: lighten(@side-color-5, 5%);
+@side-color-7: lighten(@side-color-6, 5%);
+@side-color-8: lighten(@side-color-7, 5%);
+@side-color-9: lighten(@side-color-8, 5%);
+
+@hamburger-color-closed: fadeout(@text-color, 30);
+@hamburger-color-open: @text-color;
+
+@width1: 220px;
+@width2: 100px;
+@full-width: 100%;
+@full-height: 100%;
+
+#wrapper {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    padding-left: 0;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    margin-left: 0;  
+}
+
+#navss {
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    padding-left: 0;
+    transition: all 0.5s ease;
+}
+
+#navss.toggled {
+    margin-left: 0;  
+}
+
+#quiz-content{
+    color: #333;
+}
+
+#quiz-content .headbar{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#quiz-content .time-left{
+    text-align: right;
+}
+
+#quiz-content .footbar{
+    color: #9A9A9A;
+    font-size: 18px;
+}
+
+#quiz-content .optionbars{
+    padding-top: 35px;
+    padding-bottom: 10px;
+}
+
+.options > input{
+    margin-left: 5%;
+}
+
+.options > label {
+    color: #5e5e5e;
+    font-size: 18px;
+    position: unset;
+}
+
+.quizz > div {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 3;
+}
+
+.quizz > h3 {
+    line-height: 2;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.quizz .enroll {
+    font-weight: 400;
+}
+
+.answer > div {
+    line-height: 1;
+}
+
+@media only screen and (min-width : 768px) {
+
+    .carousel-indicators {
+        bottom: -30px;
+    }
+}
+
+@media only screen and (min-width : 1024px) {
+
+    .carousel-indicators {
+        bottom: -10px;
+    }
+}
