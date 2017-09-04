@@ -154,7 +154,7 @@
             </div>
         </nav>
 
-        <?php if($this->uri->segment(1) != 'profile'):?>
+        <?php if($this->uri->segment(1) == 'get-start'):?>
             <div class="row" id="landing-slider">                
                 <div class="col-md-12">
                     <header id="myCarousel" class="carousel slide">

@@ -1422,6 +1422,7 @@ img#loaders {
     height: 40px;
     padding: 10px 3%;
     width: 75%;
+    font-size: 12px;
 }
 
 #copy-btn {

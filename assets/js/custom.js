@@ -202,7 +202,7 @@ $(document).ready(function(){
     	}    	
     });
 
-    $('body').on('submit', '#sentMail', function(){
+    $('body').on('submit', '#sentMail', function(e){
 
 		$("#loaders").removeClass('display-none');
 		$("#loaders").addClass('display-block');
@@ -217,7 +217,7 @@ $(document).ready(function(){
 		        //dataType: 'json',
 		        success: function( resp ) {
 		        	
-		        	//window.location = window.location;
+		        	window.location = window.location;
 		        	$("#loaders").removeClass('display-block'); 
 	        		$("#loaders").addClass('display-none');	
 		        },
@@ -230,7 +230,6 @@ $(document).ready(function(){
 			$("#loaders").removeClass('display-block'); 
 	        $("#loaders").addClass('display-none');	
 		}
-		
 
 	    return false;
 	});

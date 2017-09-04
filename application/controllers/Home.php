@@ -846,35 +846,44 @@ class Home extends CI_Controller {
 		endif;
 	}
 
+
+
 	public function shareApp(){
+       $this->load->library('My_PHPMailer');    
+       $mail = new PHPMailer();
+       $mails = explode(',', $this->input->post('mail-5'));
+       $mail->IsSMTP(); // we are going to use SMTP
+       $mail->SMTPAuth   = true; // enabled SMTP authentication
+       $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+       $mail->Host       = "smtp.gmail.com";      // setting GMail as our SMTP server
+       $mail->Port       = 465;                   // SMTP port to connect to GMail
+       $mail->Username   = "team@iedu.io";  // user email address
+       $mail->Password   = "10EDcast*";            // password in GMail
+       $mail->SetFrom('team@iedu.io', 'iEdu');  //Who is sending the email
+      $mail->Subject    = "Email subject";
+    if($this->input->post('mail-msg')):
+       $mail->Body      = "HTML message";
+    else:
+   	$mail->Body    = "Access all 300 apps for only $9.99 for a lifetime. Download GoLearningBus Library to take the benefit of new features. In future we are not going to update this app, please install our library app.";
+    endif;
 
-		$this->load->library('My_PHPMailer');	
-        $mail = new PHPMailer();
-        $mail->IsSMTP(); // we are going to use SMTP
-        $mail->SMTPAuth   = true; // enabled SMTP authentication
-        $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
-        $mail->Host       = "smtp.gmail.com";      // setting GMail as our SMTP server
-        $mail->Port       = 465;                   // SMTP port to connect to GMail
-        $mail->Username   = "team@iedu.io";  // user email address
-        $mail->Password   = "10EDcast*";            // password in GMail
-        $mail->SetFrom('team@iedu.io', 'iEdu');  //Who is sending the email
-       // $mail->AddReplyTo("saket@edcast.com");  //email address that receives the response
-        $mail->Subject    = "Email subject";
-        $mail->Body      = "HTML message";
-        $mail->AltBody    = "Plain text message";
-        $destino = "richa@edcast.com"; // Who is addressed the email to
-        $mail->AddAddress($destino, "richa");
-
-       // $mail->AddAttachment("images/phpmailer.gif");      // some attached files
-       // $mail->AddAttachment("images/phpmailer_mini.gif"); // as many as you want
-        if(!$mail->Send()) {
-            $data["message"] = "Error: " . $mail->ErrorInfo;
-
-        } else {
-            $data["message"] = "Message sent correctly!";
-            
-        }
-	}
+       foreach($mails as $mymail)
+		{
+		   $mail->AddAddress($mymail);
+		}
+      
+       if(!$mail->Send()) {
+          $data["message"] = "Error: " . $mail->ErrorInfo;
+          $this->session->set_userdata('theMessage', $mail->ErrorInfo);
+			$this->session->set_userdata('message', 'FAIL');
+           
+      } else {
+           $data["message"] = "Message sent correctly!";
+           $this->session->set_userdata('theMessage', 'Mail successfully send.');
+			$this->session->set_userdata('message', 'SUCCESS');
+           
+      }
+   }
 
 	public function forgetPass(){
 
