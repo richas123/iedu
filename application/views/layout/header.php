@@ -17,8 +17,10 @@
                             </a>
                         </div>
                         <div class="col-sm-9 col-md-9 col-lg-9 col-xs-12">
-                            <input type="text" placeholder="Search Here" id="top-search">
-                            <i class="ion-android-search"></i>
+                            <form action="/Search" name="searchCourse" id="searchCourse-head" novalidate="novalidate" method="post">
+                                <input type="text" placeholder="Search Here" id="top-search" name="top-search">
+                                <i class="ion-android-search"></i>
+                            </form>
                         </div>
                         <div class="col-sm-2 col-md-2 col-lg-2 col-xs-12">
                             <a href="<?php echo $fblink;?>">

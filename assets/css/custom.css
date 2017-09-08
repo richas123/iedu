@@ -1660,6 +1660,12 @@ a.social {
     padding: 5px 25px;
 }
 
+.top-head #top-search-error {
+   position: absolute;
+   left: 46px;
+   top: 38px;
+} 
+
 #top-search-error {
     position: absolute;
     right: 340px;

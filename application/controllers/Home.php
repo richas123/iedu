@@ -211,7 +211,7 @@ class Home extends CI_Controller {
 						redirect($this->data['base_url']);
 					else:
 						$this->session->set_userdata('message', 'FAIL');
-						$this->session->set_userdata('theMessage', 'Invalid Sign In credentials.');			
+						$this->session->set_userdata('theMessage', 'Invalid sign in detail.');			
 					endif;					
 				else:						
 
@@ -1080,7 +1080,7 @@ class Home extends CI_Controller {
 				$this->session->set_userdata('myCourse', $this->data['myCourse']);
 			else:
 				$this->session->set_userdata('message', 'FAIL');
-				$this->session->set_userdata('theMessage', 'Invalid Sign In credentials.');			
+				$this->session->set_userdata('theMessage', 'Invalid sign in detail.');			
 			endif;
 
 			redirect($this->data['base_url']);

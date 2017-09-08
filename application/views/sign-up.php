@@ -5,7 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="referrer" content="origin">
-        <title>iEdu</title>
+        <title>GoLearningBus</title>
+        <link rel="icon" type="image/png" href="/assets/img/favicon-.png"/>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/assets/css/3.3.7.bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/assets/css/3.3.7.bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -99,7 +100,7 @@
 
         <header class="resert-password">
             <a class="" href="<?php echo $base_url;?>">
-                <img src="/assets/img/iEdu-logo-inner.png">
+                <img src="/assets/img/GLB_icon.png">
             </a>
         </header>
 
