@@ -132,14 +132,80 @@ class Start extends CI_Controller {
 
 	public function getResponse(){
 
-		echo "<pre>";
-		print_r($_POST);
+		if($_GET['st'] == 'Completed'):
+
+			$this->data['PaymentToken'] = $this->config->item('pay')['pay_token'];
+			$this->RefreshToken();
+
+			$fields = array(
+				'course_id' => 29,
+				'transaction_key' => $_GET['tx'],
+				'amount' => 9.99,
+				'provider' => 'web'
+			);
+
+			$data = json_encode($fields);
+
+			$ch = curl_init();
+			$headers = array(
+			   'Content-Type: application/json',
+			   'AccessToken	: '.$this->session->userdata('mytoken')['accesstoken'],
+			   'PaymentToken: '.$this->data['PaymentToken']
+			);
+			curl_setopt($ch, CURLOPT_URL, $this->data['api_url']."/client/v1/store/purchase");
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			$data = curl_exec($ch);
+			curl_close($ch);
+
+			$apidata = json_decode($data);
+
+			if($apidata->response_code == 1000):
+
+				$this->session->set_userdata('message', 'SUCCESS');
+				$this->session->set_userdata('theMessage', 'Successfully payment.');
+
+				$ch = curl_init();		
+				$headers = array(
+				   'Content-Type: application/json',
+				   'AccessToken: '.$this->session->userdata('mytoken')['accesstoken']
+				);
+				curl_setopt($ch, CURLOPT_URL, $this->data['api_url']."/client/v1/user/payment");
+				curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($ch, CURLOPT_HEADER, false);
+
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+				curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($ch, CURLOPT_POST, false);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, []);
+				$data = curl_exec($ch);
+				curl_close($ch);
+
+				$apidata = json_decode($data);
+			else:
+				
+				$this->session->set_userdata('message', 'FAIL');
+				$this->session->set_userdata('theMessage', 'Payment fail.');
+			endif;
+		else:
+
+			$this->session->set_userdata('message', 'INFO');
+			$this->session->set_userdata('theMessage', 'Payment is proceessing.');
+		endif;
+
+		redirect($this->data['base_url'].'/get-start');
 	}
 
 	public function cancelPay(){
 
-		echo "<pre>";
-		print_r($_POST);
+		$this->session->set_userdata('message', 'INFO');
+		$this->session->set_userdata('theMessage', 'Payment cancel.');
+
+		redirect($this->data['base_url'].'/get-start');
 	}
 
 	public function RefreshToken(){

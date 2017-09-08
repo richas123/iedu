@@ -130,7 +130,7 @@
                 <div class="">
                     <input type="hidden" name="ApiKey" id="ApiKey" value="<?php echo $ApiKey;?>">
                     <button class="btn btn-primary pull-left sign-in">Sign In</button>
-                    <a class="pull-right for-pass" data-toggle="modal" title="Sign Up" href="/forgot-password">Forget Password?</a>
+                    <a class="pull-right for-pass" data-toggle="modal" title="Sign Up" href="/forgot-password">Forgot Password?</a>
                 </div>
                 <div class="clearfix"></div>
             </form>      

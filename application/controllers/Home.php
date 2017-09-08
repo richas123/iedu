@@ -549,18 +549,10 @@ class Home extends CI_Controller {
 				endif;
 				break;
 
-			case 1002: echo 'exist';
-				//$this->session->set_userdata('message', 'FAIL');
-				//$this->session->set_userdata('theMessage', 'User already exists.');
-				break;
+			case 1002: echo 'exist'; break;
 			
-			default: echo false;
-				//$this->session->set_userdata('message', 'WARNING');
-				//$this->session->set_userdata('theMessage', 'Something went wrong.');
-				break;
+			default: echo false; break;
 		}
-		
-		//redirect($_POST['curr_url']);
 	}
 
 	public function signin(){
@@ -595,8 +587,6 @@ class Home extends CI_Controller {
 
 		if($apidata->response_code == 1000):			
 				
-			//$this->session->set_userdata('message', 'SUCCESS');
-			//$this->session->set_userdata('theMessage', 'Successfully Sign In.');
 			echo true;
 			
 			$signdata['mydata'] = array(
@@ -687,11 +677,7 @@ class Home extends CI_Controller {
 			$this->session->set_userdata('myCourse', $this->data['myCourse']);
 		else:
 			echo 'false';
-			//$this->session->set_userdata('message', 'FAIL');
-			//$this->session->set_userdata('theMessage', 'Invalid Sign In credentials.');			
 		endif;
-		
-		//redirect($_POST['curr_url']);
 	}
 
 	public function shareProgress(){
@@ -849,40 +835,38 @@ class Home extends CI_Controller {
 
 
 	public function shareApp(){
-       $this->load->library('My_PHPMailer');    
-       $mail = new PHPMailer();
-       $mails = explode(',', $this->input->post('mail-5'));
-       $mail->IsSMTP(); // we are going to use SMTP
-       $mail->SMTPAuth   = true; // enabled SMTP authentication
-       $mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
-       $mail->Host       = "smtp.gmail.com";      // setting GMail as our SMTP server
-       $mail->Port       = 465;                   // SMTP port to connect to GMail
-       $mail->Username   = "team@iedu.io";  // user email address
-       $mail->Password   = "10EDcast*";            // password in GMail
-       $mail->SetFrom('team@iedu.io', 'iEdu');  //Who is sending the email
-      $mail->Subject    = "Email subject";
-    if($this->input->post('mail-msg')):
-       $mail->Body      = "HTML message";
-    else:
-   	$mail->Body    = "Access all 300 apps for only $9.99 for a lifetime. Download GoLearningBus Library to take the benefit of new features. In future we are not going to update this app, please install our library app.";
-    endif;
+		$this->load->library('My_PHPMailer');    
+		$mail = new PHPMailer();
+		$mails = explode(',', $this->input->post('mail-5'));
+		$mail->IsSMTP(); // we are going to use SMTP
+		$mail->SMTPAuth   = true; // enabled SMTP authentication
+		$mail->isHTML(true);
+		$mail->SMTPSecure = "ssl";  // prefix for secure protocol to connect to the server
+		$mail->Host       = "smtp.gmail.com";      // setting GMail as our SMTP server
+		$mail->Port       = 465;                   // SMTP port to connect to GMail
+		$mail->Username   = "team@iedu.io";  // user email address
+		$mail->Password   = "10EDcast*";            // password in GMail
+		$mail->SetFrom('team@iedu.io', 'iEdu');  //Who is sending the email
+		$mail->Subject    = "Email subject";
+		if($this->input->post('mail-msg')):
+			$mail->Body      = $this->input->post('mail-msg');
+		else:
+			$mail->Body    = "<div class='alert alert-success'><p style='font-size: 15px;'>I learned on www.GolearningBus.com you  can also start learning by     downloading the mobile app</p><br/><br/> <b>IOS:-</b>  https://tinyurl.com/GLB-App<br/><br/><b>Android:-</b>  https://tinyurl.com/GLB-Android<br/><br/></div>";
+		endif;
 
-       foreach($mails as $mymail)
-		{
-		   $mail->AddAddress($mymail);
-		}
-      
-       if(!$mail->Send()) {
-          $data["message"] = "Error: " . $mail->ErrorInfo;
-          $this->session->set_userdata('theMessage', $mail->ErrorInfo);
+		foreach($mails as $mymail):
+			$mail->AddAddress($mymail);
+		endforeach;
+
+		if(!$mail->Send()):
+			$data["message"] = "Error: " . $mail->ErrorInfo;
+			$this->session->set_userdata('theMessage', $mail->ErrorInfo);
 			$this->session->set_userdata('message', 'FAIL');
-           
-      } else {
-           $data["message"] = "Message sent correctly!";
-           $this->session->set_userdata('theMessage', 'Mail successfully send.');
+		else:
+			$data["message"] = "Message sent correctly!";
+			$this->session->set_userdata('theMessage', 'Mail successfully send.');
 			$this->session->set_userdata('message', 'SUCCESS');
-           
-      }
+		endif;
    }
 
 	public function forgetPass(){

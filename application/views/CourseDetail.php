@@ -23,8 +23,7 @@
             <div class="container">
                 <div class="row">
                     <div class="search-page">
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-10 col-md-10 col-lg-10">                     
+                        <div class="col-sm-12 col-md-12 col-lg-12">                     
                             <div class="col-xs-3 col-sm-5 col-md-3">
                                 <img src="<?php echo $courseDesc[0]->image_url;?>" class="course-image">
                             </div>
@@ -46,8 +45,13 @@
                                         </div>
                                         <div class="rate2">
                                             <?php for($x=0;$x<$courseDesc[0]->course_rating;$x++):?>
-                                                <i class="ion-android-star"></i>
+                                                <i class="ion-android-star green"></i>
                                             <?php endfor;?> 
+                                            <?php if($courseDesc[0]->course_rating < 5):?>
+                                                <?php for($x=$x;$x<5;$x++):?>
+                                                    <i class="ion-android-star"></i>
+                                                <?php endfor;?>
+                                            <?php endif;?>
                                         </div>                                    
                                         <a href="/enroll-course/<?php echo $this->uri->segment(2).'/'.$this->uri->segment(3);?>" class="enroll">
                                             Enroll Now
@@ -86,14 +90,12 @@
                                 <?php endif;?>
                             </div>     
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>    
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="curri-lead">
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-10 col-md-10 col-lg-10">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
                             <h3 class="curriculum pull-left">
                                 <a href="javascript:void(0);"> Curriculum </a>
                             </h3>
@@ -103,14 +105,12 @@
                                 <?php endif;?>
                             </h3>
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
                     </div>
                 </div>           
                 <br>
                 <div class="row">
                     <div class="accordion-box">
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-10 col-md-10 col-lg-10">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
                             <aside class="accordion">
                                 <?php for($z=0;$z<count($courseDetail);$z++):?>
                                     <h1>
@@ -176,6 +176,7 @@
                                                         <?php if($this->session->userdata('mydata')['user_id']):?>
                                                             <?php if($master_subscription):?>
                                                                 <i class="pull-right green perci">
+                                                                
                                                                     <?php echo (int)(($courseDetail[$z]->subsections[$x]->completed_assignments/$courseDetail[$z]->subsections[$x]->total_assignments) * 100).'%';?>
                                                                 </i>
                                                             <?php else:?>
@@ -228,25 +229,22 @@
                                 <?php endfor;?>
                             </aside>
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="certify">
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
                         <?php if($this->session->userdata('mydata')['user_id']):?>
                             <?php if($completeass == $totalass && $totalass > 0): $bgcert = 'green-bg'; else: $bgcert = ''; endif;?>
                         <?php else:?>
                             <?php  $bgcert = '';?>
                         <?php endif;?>
-                        <div class="col-sm-10 col-md-10 col-lg-10 <?php echo $bgcert;?>">                    
+                        <div class="col-sm-12 col-md-12 col-lg-12 <?php echo $bgcert;?>">                    
                             <div class="pull-left">
                                 Get Certificate to Complete All Level of this Course
                             </div>
                             <img src="/assets/img/badge_big_icon.png" class="pull-right">
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
                     </div>                
                 </div>
             </div>

@@ -35,30 +35,26 @@
                     <input checked data-toggle="toggle" data-style="ios" type="checkbox" id="for-share-leader" name="for-share-leader">
                 </div>
             </aside>
-
-            <div class="container">                
-                <div class="profile-page">
-                    <div class="row">                        
-                        <div class="clearfix"></div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-10 col-md-10 col-lg-10"> 
-                            <div class="pro-img pull-left">
-                                <img src="<?php echo $profile->image_url;?>">
-                            </div>
-                            <div class="pull-left pro-text">
-                                <div class="pro-name">
-                                    <?php echo ucfirst($profile->first_name).' '.ucfirst($profile->last_name);?>
-                                </div>
-                                <div class="pro-mail">
-                                    <?php echo $profile->email_id;?>        
-                                </div>
-                                <div class="pro-score">
-                                    Course completed <?php echo (int)((int)($profile->assignment_status->completed) / (int)($profile->assignment_status->total) * 100);?>%
-                                </div>
-                            </div> 
-                            <img src="/assets/img/settings.png" class="animated fadeInLeft pull-right is-closed" data-toggle="offcanvas" style="cursor: pointer;">
+                           
+            <div class="profile-page">
+                <div class="row">                        
+                    <div class="clearfix"></div>
+                    <div class="container">
+                        <div class="pro-img pull-left">
+                            <img src="<?php echo $profile->image_url;?>">
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+                        <div class="pull-left pro-text">
+                            <div class="pro-name">
+                                <?php echo ucfirst($profile->first_name).' '.ucfirst($profile->last_name);?>
+                            </div>
+                            <div class="pro-mail">
+                                <?php echo $profile->email_id;?>        
+                            </div>
+                            <div class="pro-score">
+                                Course completed <?php echo (int)((int)($profile->assignment_status->completed) / (int)($profile->assignment_status->total) * 100);?>%
+                            </div>
+                        </div> 
+                        <img src="/assets/img/settings.png" class="animated fadeInLeft pull-right is-closed" data-toggle="offcanvas" style="cursor: pointer;">
                     </div>
                 </div>
             </div>
@@ -77,32 +73,27 @@
             <div class="container">
                 <div class="row">
                     <div class="achieve">
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                        <div class="col-sm-10 col-md-10 col-lg-10"> 
+                        <div class="col-sm-12 col-md-12 col-lg-12"> 
                             <h3 class="">My Achievements</h3>       
                         </div>
-                        <div class="col-sm-1 col-md-1 col-lg-1"></div>
                     </div>
                 </div>
 
                 <?php if(count($courseDetail) == 0):?>
                     <div class="row">
                         <div class="search-page">
-                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                            <div class="col-sm-10 col-md-10 col-lg-10 set-profile">
+                            <div class="col-sm-12 col-md-12 col-lg-12 set-profile">
                                 <div>
                                     You are so close to achieve something!
                                 </div>
                             </div>
-                            <div class="col-sm-1 col-md-1 col-lg-1"></div>    
                         </div>
                     </div>
                 <?php else:?>
                     <?php for($z=0;$z<count($courseDetail);$z++):?>
                         <div class="row">
                             <div class="search-page">
-                                <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                                <div class="col-sm-10 col-md-10 col-lg-10 set-profile">
+                                <div class="col-sm-12 col-md-12 col-lg-12 set-profile">
                                     <div class="col-sm-4 col-md-2" style="height: auto;">
                                         <img src="<?php echo $courseDetail[$z]->image_url;?>">
                                     </div>
@@ -118,7 +109,6 @@
                                         </a>
                                     </div>                        
                                 </div>
-                                <div class="col-sm-1 col-md-1 col-lg-1"></div>    
                             </div>
                         </div>
                         <br>

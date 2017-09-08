@@ -46,8 +46,7 @@
             <?php $forcase = explode('-', $this->uri->segment(5)); $totalcompleteass = 0;?>
             <div class="container">
                 <div class="row">
-                    <div class="accordion-box">  
-                        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>                      
+                    <div class="accordion-box">
                         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" id="the-side">  
                             <div class="back-for">
                                 <button type="button" class="animated fadeInLeft is-open for-ass-sidebar" data-toggle="offcanvas">
@@ -120,7 +119,7 @@
                                 </p>
                             </aside>
                         </div>
-                        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9" id="the-content">
+                        <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11" id="the-content">
                             <div class="next-prev">
                                 <?php if(count($assignments) == 1):?>
                                     <a href="javascript:void(0);" class="btn pull-left disable">
@@ -242,7 +241,6 @@
                                 }                                
                             ?>                            
                         </div>
-                        <div class="col-xs-12 col-sm-1 col-md-1 col-lg-1"></div>
                     </div>
                 </div> 
             </div>

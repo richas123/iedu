@@ -7,8 +7,7 @@
                 <?php do { ?>              
                     <div class="row">
                         <div class="start-page">
-                            <div class="col-sm-1 col-md-1 col-lg-1"></div>
-                            <div class="col-sm-10 col-md-10 col-lg-10">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
                                 <h3>
                                     <!---  -->                                               
                                 </h3>                            
@@ -36,8 +35,13 @@
                                             <div class="pull-left">
                                                 <div class="">
                                                     <?php for($x=0;$x<$course[$z]->course_rating;$x++):?>
-                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star green"></i>
                                                     <?php endfor;?>   
+                                                    <?php if($course[$z]->course_rating < 5):?>
+                                                        <?php for($x=$x;$x<5;$x++):?>
+                                                            <i class="ion-android-star"></i>
+                                                        <?php endfor;?>
+                                                    <?php endif;?>
                                                 </div>
                                                 <div class="">
                                                     <?php if($course[$z]->price == 0):?>
@@ -66,7 +70,6 @@
                                     </div>
                                 <?php endfor;?>
                             </div>
-                            <div class="col-sm-1 col-md-1 col-lg-1"></div>    
                         </div>
                     </div>
                     <?php 

@@ -25,15 +25,15 @@ $().ready(function() {
             $("#the-side").addClass('col-md-1');
             $("#the-side").removeClass('col-sm-4');
             $("#the-side").addClass('col-sm-1');
-            $("#the-side").removeClass('col-xs-7');
+            $("#the-side").removeClass('col-xs-9');
             $("#the-side").addClass('col-xs-1');
 
-            $("#the-content").removeClass('col-lg-7');
-            $("#the-content").addClass('col-lg-9');
-            $("#the-content").removeClass('col-md-6');
-            $("#the-content").addClass('col-md-9');
-            $("#the-content").removeClass('col-sm-6');
-            $("#the-content").addClass('col-sm-9');
+            $("#the-content").removeClass('col-lg-9');
+            $("#the-content").addClass('col-lg-11');
+            $("#the-content").removeClass('col-md-8');
+            $("#the-content").addClass('col-md-11');
+            $("#the-content").removeClass('col-sm-8');
+            $("#the-content").addClass('col-sm-11');
             
             if($(window).width() < 768){
                 
@@ -54,14 +54,14 @@ $().ready(function() {
             $("#the-side").removeClass('col-sm-1');
             $("#the-side").addClass('col-sm-4');
             $("#the-side").removeClass('col-xs-1');
-            $("#the-side").addClass('col-xs-7');
+            $("#the-side").addClass('col-xs-9');
 
-            $("#the-content").removeClass('col-lg-9');
-            $("#the-content").addClass('col-lg-7');
-            $("#the-content").removeClass('col-md-9');
-            $("#the-content").addClass('col-md-6');
-            $("#the-content").removeClass('col-sm-9');
-            $("#the-content").addClass('col-sm-6');
+            $("#the-content").removeClass('col-lg-11');
+            $("#the-content").addClass('col-lg-9');
+            $("#the-content").removeClass('col-md-11');
+            $("#the-content").addClass('col-md-8');
+            $("#the-content").removeClass('col-sm-11');
+            $("#the-content").addClass('col-sm-8');
             
             if($(window).width() < 768){
                 

@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="referrer" content="origin">
 
-        <title>iEdu</title>
+        <title>GoLearningBus</title>
+        <link rel="icon" type="image/png" href="/assets/img/favicon-.png"/>
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,‌​100italic,300,300ita‌​lic,400italic,500,50‌​0italic,700,700itali‌​c,900italic,900' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="/assets/css/3.3.7.bootstrap.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="/assets/css/3.3.7.bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -327,7 +328,7 @@
                             </form>  
                             <br><br>
                             <h4>Or share link via</h4>                            
-                            <div id="copy-share" class="pull-left">https://play.google.com/store/apps/details?id=com.wagmob.golearningbus</div>
+                            <div id="copy-share" class="pull-left">www.GolearningBus.com</div>
                             <button id="copy-btn" name="copy-btn" onclick="CopyToClipboard('copy-share')">Copy Link</button>
                             <br>
                             <br>
@@ -398,35 +399,25 @@
                     <div class="modal-body">
                         <img src="/assets/img/iEdu-logo-inner.png" class="pull-left">
                         <div class="clearfix padding-20"></div>  
-                        <form class="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" id="paypal_form" target="_blank">                            
-                            <input type="hidden" name="no_note" value="1" />
-                            <input type="hidden" name="no_shipping" value="1" />
-                            <input type="hidden" name="lc" value="UK" />                            
-                            <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest" />
-                            <input type="hidden" name="first_name" value="<?php echo $this->session->userdata('mydata')['first_name'];?>"  />
-                            <input type="hidden" name="last_name" value="<?php echo $this->session->userdata('mydata')['last_name'];?>"  />
-                            <input type="hidden" name="payer_email" value="<?php echo $this->session->userdata('mydata')['email_id'];?>"  />
-                            <input type="hidden" name="item_number" value="123456" / >
-                            <input type="hidden" name="cmd" value="_s-xclick">
-                            <input type="hidden" name="hosted_button_id" value="UQHDJRL36LKAG">
-                            <input type="hidden" name="currency_code" value="USD">
-                            <input type="hidden" name="return" value="http://stage.iedu.io">
-                            <input type="hidden" name="cancel_return" value="http://stage.iedu.io">
-                            <div class="form-group">
-                                <select name="os0" class="form-control" id="os0">
+                            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top" target="_blank">                            
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="FC3PEM4VK94XN">
+                                <input type="hidden" name="return" value="http://stage.iedu.io/get-start/getResponse">
+                                <input type="hidden" name="cancel_return" value="http://stage.iedu.io">
+                                
+                                <input type="hidden" name="on0" value="">
+                                <select name="os0">
                                     <option value="Yearly Subscription">Yearly Subscription : $9.99 USD - yearly</option>
-                                </select>    
-                            </div>
-                            <i>
-                                Please tap "Subscribe" to complete your purchase.
-                            </i>
-                            <hr>   
-                            <div class="form-group">                         
-                                <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!" class="pull-right">
-                                <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-                            </div>
-                            <div class="clearfix"></div>
-                        </form>   
+                                </select>                                
+                                <input type="hidden" name="currency_code" value="USD">
+                                <i>Please tap "Subscribe" to complete your purchase.</i>
+                                <hr>  
+                                <div class="form-group">                        
+                                <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </div>
+                                <div class="clearfix"></div>
+                            </form> 
                         <div class="clearfix"></div>
                     </div>                    
                 </div>

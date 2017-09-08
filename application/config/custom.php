@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-//error_reporting(0);
+error_reporting(0);
 
 $protocol = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
 $config['url'] = array('baseUrl' => $protocol . "://" . $_SERVER['HTTP_HOST']);
@@ -9,6 +9,8 @@ $config['url'] = array('baseUrl' => $protocol . "://" . $_SERVER['HTTP_HOST']);
 $config['gender'] = array('Male', 'Female');
 
 $config['glogdetail'] = array('client_id' => '373735924237-0gt1378o26il29fiuvhlr1t5ekejk087.apps.googleusercontent.com', 'client_secret' => 'VvJg2aKP6exs0_OVURAzoUEs'); 
+
+$config['pay'] = array('pay_token' => 'a00975711221b0003d3b99a42f61f102562c816dd82883709f4468358b6fd757');
 
 
 switch ($_SERVER['HTTP_HOST']) {

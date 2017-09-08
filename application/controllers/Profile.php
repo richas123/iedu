@@ -76,10 +76,6 @@ class Profile extends CI_Controller {
 			$this->data['myCourse'] = array();
 			redirect($this->data['base_url']);
 		endif;
-
-		echo "<pre>";
-		print_r($this->session->userdata());
-		echo "</pre>";
 	}
 
 	public function index(){
@@ -326,11 +322,9 @@ class Profile extends CI_Controller {
 	public function RefreshToken(){
 
 		if($this->session->userdata('mytoken')['refreshtoken'] != ''):
-			echo "iffff";
+
 			$value = RefreshToken($this->session->userdata('mytoken')['refreshtoken'], $this->data['ApiKey'], $this->data['api_url']);
 			$this->session->set_userdata('mytoken', array('accesstoken' => $value['accesstoken'], 'refreshtoken' => $value['refreshtoken']));
-		else:
-			echo "elseeeeee";
 		endif;
 	}
 }

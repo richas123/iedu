@@ -49,4 +49,8 @@ class SignOut extends CI_Controller {
 		
 		redirect($this->data['base_url']);
 	}
+
+	public function test(){
+		$this->load->view('test');
+	}
 }

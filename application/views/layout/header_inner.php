@@ -8,7 +8,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="<?php echo $base_url;?>">
-                        <img src="/assets/img/Final_iEdu.io-logo.png">
+                        <img src="/assets/img/GLB_icon.png">
                     </a>
                 </div>
                 <div class="collapse navbar-collapse" id="navbarCollapse">                    

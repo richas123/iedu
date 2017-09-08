@@ -13,12 +13,10 @@
                 <br>
                 <?php if(count($courseDetail) == 0):?>
                     <div class="row">
-                        <div class="search-result">
-                            <div class="col-sm-1 col-md-2 col-lg-2"></div>
-                            <div class="col-sm-10 col-md-8 col-lg-8">
+                        <div class="search-result">                            
+                            <div class="col-sm-12 col-md-12 col-lg-12">
                                 Course not found.
-                            </div>
-                            <div class="col-sm-1 col-md-2 col-lg-2"></div>
+                            </div>                            
                         </div>
                     </div>
                 <?php endif;?>
@@ -29,8 +27,7 @@
                     ?>  
                     <div class="row">
                         <div class="search-result">
-                            <div class="col-sm-1 col-md-2 col-lg-2"></div>
-                            <div class="col-sm-10 col-md-8 col-lg-8">                     
+                            <div class="col-sm-12 col-md-12 col-lg-12">                     
                                 <div class="col-sm-4 col-md-2">
                                     <a href="/<?php echo $myurl;?>" class="title">
                                         <img src="<?php echo $courseDetail[$z]->image_url;?>">
@@ -46,8 +43,13 @@
                                     <div class="pull-left">
                                         <div class="rate1">
                                             <?php for($x=0;$x<$courseDetail[$z]->course_rating;$x++):?>
-                                                <i class="ion-android-star"></i>
+                                                <i class="ion-android-star green"></i>
                                             <?php endfor;?>  
+                                            <?php if($courseDetail[$z]->course_rating < 5):?>
+                                                <?php for($x=$x;$x<5;$x++):?>
+                                                    <i class="ion-android-star"></i>
+                                                <?php endfor;?>
+                                            <?php endif;?>
                                         </div>
                                         <div class="rate2">
                                             <?php if($courseDetail[$z]->price == 0):?>
@@ -75,7 +77,6 @@
                                     <div class="clearfix"></div>
                                 </div>                        
                             </div>
-                            <div class="col-sm-1 col-md-2 col-lg-2"></div>    
                         </div>
                     </div>
                     <br>

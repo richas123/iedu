@@ -206,7 +206,7 @@ class EnrollCourse extends CI_Controller {
 		if($apidata->response_code == 1000):
 
 			$this->session->set_userdata('message', 'SUCCESS');
-			$this->session->set_userdata('theMessage', 'Successfully removerd.');
+			$this->session->set_userdata('theMessage', 'Successfully removed.');
 		else:
 
 			$this->session->set_userdata('message', 'WARNING');
