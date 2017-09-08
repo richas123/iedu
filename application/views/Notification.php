@@ -15,7 +15,7 @@
                         <div class="col-sm-10 col-md-10 col-lg-10">
                             <?php if(count($notifications) == 0):?>
                                 <div class="inner-board notic-board">
-                                    There is no notification
+                                    You have no notifications
                                 </div>
                             <?php endif;?>
                             <?php for($z=0;$z<count($notifications);$z++):?>

@@ -111,7 +111,7 @@ class ChangePass extends CI_Controller {
 			switch ($apidata->response_code) {
 				case 1000:
 					$this->session->set_userdata('message', 'SUCCESS');
-					$this->session->set_userdata('theMessage', 'Password successfully changed.');
+					$this->session->set_userdata('theMessage', 'Password Updated Successfully.');
 					break;
 
 				case 1007:

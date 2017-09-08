@@ -276,7 +276,7 @@
                 <div class="modal-content">
                     <div class="modal-body text-center">
                         <div class="error">
-                            Ooops!!
+                            Oops
                         </div>
                         <div class="result-msg">
                             Your answer is incorrect!
@@ -297,7 +297,7 @@
                     <div class="modal-content">
                         <div class="modal-body text-center">
                             <div class="green">
-                                Awesome!!
+                                Awesome
                             </div>
                             <div class="result-msg">
                                 You got that right!
@@ -382,7 +382,7 @@
                 <div class="modal-content">
                     <div class="modal-content">
                         <div class="modal-body text-center">
-                            <h4>Do You want to remove this course?</h4>
+                            <h4>Do you want to remove this course?</h4>
                             <hr>
                             <button id="yes" name="yes" class="yesnoen pull-right">Yes</button>
                             <button id="no" name="no" class="yesnoen pull-right">No</button>
@@ -407,10 +407,10 @@
                                 
                                 <input type="hidden" name="on0" value="">
                                 <select name="os0">
-                                    <option value="Yearly Subscription">Yearly Subscription : $9.99 USD - yearly</option>
+                                    <option value="Yearly Subscription">Get all courses of GoLearningBus Library for $9.99</option>
                                 </select>                                
                                 <input type="hidden" name="currency_code" value="USD">
-                                <i>Please tap "Subscribe" to complete your purchase.</i>
+                                <i>Please pay $9.99 to get complete access. Do you want to proceed?.</i>
                                 <hr>  
                                 <div class="form-group">                        
                                 <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
@@ -555,7 +555,7 @@
                                     $(this).attr('placeholder', '');
                                     $(this).val('');
                                 }else{
-                                    alert('Please enter valid email id, Thanks!');
+                                    alert('Enter a Valid Email Address, Thanks!');
                                 }                                   
                             }
                         });

@@ -84,7 +84,7 @@
                         <div class="search-page">
                             <div class="col-sm-12 col-md-12 col-lg-12 set-profile">
                                 <div>
-                                    You are so close to achieve something!
+                                    You are so close to achieving something!
                                 </div>
                             </div>
                         </div>

@@ -168,7 +168,7 @@ $().ready(function() {
 
                 if(resp == 'exist'){
 
-                    $("#ajaxmsg").html('User already registered');                    
+                    $("#ajaxmsg").html('User Already Registered');                    
                     $("#ajaxmsg").removeClass('green');
                     $("#ajaxmsg").addClass('error');
                 }

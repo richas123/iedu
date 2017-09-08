@@ -711,10 +711,10 @@ class Home extends CI_Controller {
 		if($apidata->response_code == 1000):
 			$this->session->set_userdata('message', 'SUCCESS');
 			if($this->input->post('value') == 0):
-				$this->session->set_userdata('theMessage', 'Your progress is not shared in leaderboard.');
+				$this->session->set_userdata('theMessage', 'Your progress is not shared on leaderboard.');
 			endif;
 			if($this->input->post('value') == 1):
-				$this->session->set_userdata('theMessage', 'Your progress is shared in leaderboard.');
+				$this->session->set_userdata('theMessage', 'Your progress is shared on leaderboard.');
 			endif;
 		else:
 			$this->session->set_userdata('message', 'WARNING');

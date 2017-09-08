@@ -106,7 +106,7 @@ class ResetPassword extends CI_Controller {
 		switch ($apidata->response_code) {
 			case 1000:
 
-				$this->session->set_userdata('theMessage', 'Password successfully reset.');
+				$this->session->set_userdata('theMessage', 'Password Updated Successfully.');
 				$this->session->set_userdata('message', 'SUCCESS');				
 				break;
 

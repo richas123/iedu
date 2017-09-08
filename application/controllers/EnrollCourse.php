@@ -152,7 +152,7 @@ class EnrollCourse extends CI_Controller {
 				case 1000:
 
 					$this->data['courseDesc'] = $apidata->data->coursedetails;
-					$this->data['displaymsg'] = 'Successfully enrolled';
+					$this->data['displaymsg'] = 'Successfully Enrolled';
 					break;
 
 				case 1003:

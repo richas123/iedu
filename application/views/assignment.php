@@ -337,8 +337,8 @@
                                 var theres = (totalmarks/<?php echo $assignment->total_marks;?>)*100;
                                 document.getElementById('theResult').innerHTML = theres;
                                 if(totalmarks >= document.getElementById('passing_marks').value){
-                                    document.getElementById('congo').innerHTML = 'Congratulations !!!';
-                                    document.getElementById('f-res').innerHTML = 'You have passed the quiz';
+                                    document.getElementById('congo').innerHTML = 'Congratulations!';
+                                    document.getElementById('f-res').innerHTML = 'You have passed this quiz';
                                 }else{
                                     document.getElementById('congo').innerHTML = '';
                                     document.getElementById('f-res').innerHTML = 'Oops! Please try again';

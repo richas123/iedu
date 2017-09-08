@@ -28,17 +28,17 @@ $().ready(function() {
         },
         messages: {
             first_name: {
-                required: "Please enter first name"
+                required: "Enter the First Name"
             },
             last_name: {
-                required: "Please enter last name"
+                required: "Enter the Last Name"
             },
             email_id: {
-                required: "Please enter email address", 
-                email: "Please enter valid email"
+                required: "Enter a Valid Email Address", 
+                email: "Enter a Valid Email Address"
             },
             password: {
-                required: "Please enter password"
+                required: "Enter Password"
             }
         }
     });
@@ -59,11 +59,11 @@ $().ready(function() {
         },
         messages: {
             email_id: {
-                required: "Please enter email address", 
-                email: "Please enter valid email"
+                required: "Enter a Valid Email Address", 
+                email: "Enter a Valid Email Address"
             },
             password: {
-                required: "Please enter password"
+                required: "Enter Password"
             }
         }
     });
@@ -91,13 +91,13 @@ $().ready(function() {
         },
         messages: {
             old_password: {
-                required: "Please enter old password"
+                required: "Current Password"
             },
             new_password: {
-                required: "Please enter New password"
+                required: "New Password"
             },
             con_password: {
-                required: "Please enter confrim password"
+                required: "Re-type New Password"
             }
         }
     });
@@ -117,10 +117,10 @@ $().ready(function() {
         },
         messages: {
             first_name: {
-                required: "Please enter First Name"
+                required: "Enter the First Name"
             },
             last_name: {
-                required: "Please enter Last Name"
+                required: "Enter the Last Name"
             }
         }
     });
@@ -139,11 +139,11 @@ $().ready(function() {
         },
         messages: {
             'mail-5': {
-                required: "Please enter Email",
-                email: "Please enter valid email"
+                required: "Enter a Valid Email Address",
+                email: "Enter a Valid Email Address"
             },
             'mail-msg': {
-                required: "Please enter Note"
+                required: "Enter Note"
             }
         }
     });
@@ -159,7 +159,7 @@ $().ready(function() {
         },
         messages: {
             email_id: {
-                required: "Enter email"
+                required: "Enter a Valid Email Address"
             }
         }
     });
@@ -189,16 +189,16 @@ $().ready(function() {
         },
         messages: {
             email: {
-                required: "Please enter Email"
+                required: "Enter a Valid Email Address"
             },
             otp: {
-                required: "Please enter OTP"
+                required: "Enter OTP"
             },
             new_password: {
-                required: "Please enter New password"
+                required: "New Password"
             },
             con_password: {
-                required: "Please enter confrim password"
+                required: "Re-type New Password"
             }
         }
     });
@@ -213,7 +213,7 @@ $().ready(function() {
         },
         messages: {
             'top-search': {
-                required: "Enter value"
+                required: "Enter Value for Search"
             }
         }
     });
@@ -228,7 +228,7 @@ $().ready(function() {
         },
         messages: {
             'top-search': {
-                required: "Enter value"
+                required: "Enter Value for Search"
             }
         }
     });
